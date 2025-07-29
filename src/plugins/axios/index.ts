@@ -9,16 +9,10 @@ const Plugin = {
       axios: {
         get () {
           return api
-        },
-        verifyToken () {
-          return api
         }
       },
       $axios: {
         get () {
-          return api
-        },
-        verifyToken () {
           return api
         }
       }

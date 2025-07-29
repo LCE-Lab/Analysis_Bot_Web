@@ -55,7 +55,11 @@ export default {
       this.noData = false
       this.loading = true
       try {
-        await this.$axios.get(this.type, this.serverID, this.start, this.end).then(result => {
+        await this.$recaptchaLoaded()
+        const token = await this.$recaptcha('container')
+        const headers = { 'g-recaptcha-token': token }
+
+        await this.$axios.get(this.type, this.serverID, this.start, this.end, headers).then(result => {
           const timeData = JSON.parse(result)
           if (!timeData.data) {
             this.noData = true
@@ -76,27 +80,14 @@ export default {
         if (result == null) return
         timeline.methods.draw(result)
       })
-    },
-    async recaptcha () {
-      await this.$recaptchaLoaded()
-      const token = await this.$recaptcha('container')
-      await this.$axios.verifyToken(token).then(result => {
-        const data = JSON.parse(result)
-        if (!data.data.success) {
-          this.error = true
-          this.loading = false
-        } else {
-          this.get().then(timeResult => {
-            if (timeResult == null) return
-            timeline.methods.draw(timeResult)
-          })
-        }
-      })
     }
   },
   created () {
     this.loading = true
-    this.recaptcha()
+    this.get().then(timeResult => {
+      if (timeResult == null) return
+      timeline.methods.draw(timeResult)
+    })
   },
   watch: {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
