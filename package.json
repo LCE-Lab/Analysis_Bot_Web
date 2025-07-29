@@ -39,7 +39,7 @@
     "vue-axios": "^2.1.5",
     "vue-recaptcha-v3": "^1.9.0",
     "vue-router": "^3.6.5",
-    "vue-tsc": "^2.2.12",
+    "vue-tsc": "^3.0.4",
     "vue2-datepicker": "^3.11.1"
   }
 }
