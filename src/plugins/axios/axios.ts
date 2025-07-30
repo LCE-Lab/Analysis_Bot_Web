@@ -18,8 +18,8 @@ _axios.interceptors.response.use(response => {
 })
 
 export default {
-  async Get (url: string) {
-    const res = await _axios.get(url)
+  async Get (url: string, headers = {}) {
+    const res = await _axios.get(url, headers)
     return JSON.stringify(res.data)
   }
 }
