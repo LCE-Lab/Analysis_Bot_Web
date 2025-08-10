@@ -6,7 +6,6 @@ import Layouts from 'vite-plugin-vue-layouts-next'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
-import Fonts from 'unplugin-fonts/vite'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import Inspect from 'vite-plugin-inspect'
 import Inspector from 'unplugin-vue-inspector/vite'
@@ -60,18 +59,6 @@ export default defineConfig({
     // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
     VueI18nPlugin({
       include: resolve(__dirname, './locales/**'),
-    }),
-
-    Fonts({
-      fontsource: {
-        families: [
-          {
-            name: 'Roboto',
-            weights: [100, 300, 400, 500, 700, 900],
-            styles: ['normal', 'italic'],
-          },
-        ],
-      },
     }),
 
     // https://github.com/antfu/vite-plugin-inspect

@@ -1860,7 +1860,6 @@ __metadata:
     sass-embedded: "npm:^1.90.0"
     typescript: "npm:~5.9.2"
     unplugin-auto-import: "npm:^20.0.0"
-    unplugin-fonts: "npm:^1.4.0"
     unplugin-vue-components: "npm:^29.0.0"
     unplugin-vue-inspector: "npm:^2.3.2"
     unplugin-vue-router: "npm:^0.15.0"
@@ -4773,22 +4772,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin-fonts@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "unplugin-fonts@npm:1.4.0"
-  dependencies:
-    fast-glob: "npm:^3.3.3"
-    unplugin: "npm:2.3.5"
-  peerDependencies:
-    "@nuxt/kit": ^3.0.0 || ^4.0.0
-    vite: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-  peerDependenciesMeta:
-    "@nuxt/kit":
-      optional: true
-  checksum: 10c0/40570289674ec37f9356600d6470dfa9024d0bd61d8f48be80beb2e743e4053c178adf2ae65f4a63ac88a880a2e63c37c88578514cd28dd5bf64e4fbb4b3a727
-  languageName: node
-  linkType: hard
-
 "unplugin-utils@npm:^0.2.4":
   version: 0.2.5
   resolution: "unplugin-utils@npm:0.2.5"
@@ -4865,17 +4848,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unplugin@npm:2.3.5, unplugin@npm:^2.3.5":
-  version: 2.3.5
-  resolution: "unplugin@npm:2.3.5"
-  dependencies:
-    acorn: "npm:^8.14.1"
-    picomatch: "npm:^4.0.2"
-    webpack-virtual-modules: "npm:^0.6.2"
-  checksum: 10c0/42d172be9b52cc139c69a8baefab6c44e99d7fbdafb9e5738348bc60f6c1302b9913543641f69b76bb07c6ff7d01fde3d8a67c9d3d7a976cc17d972c1ff88081
-  languageName: node
-  linkType: hard
-
 "unplugin@npm:^1.1.0, unplugin@npm:^1.5.0":
   version: 1.16.1
   resolution: "unplugin@npm:1.16.1"
@@ -4883,6 +4855,17 @@ __metadata:
     acorn: "npm:^8.14.0"
     webpack-virtual-modules: "npm:^0.6.2"
   checksum: 10c0/dd5f8c5727d0135847da73cf03fb199107f1acf458167034886fda3405737dab871ad3926431b4f70e1e82cdac482ac1383cea4019d782a68515c8e3e611b6cc
+  languageName: node
+  linkType: hard
+
+"unplugin@npm:^2.3.5":
+  version: 2.3.5
+  resolution: "unplugin@npm:2.3.5"
+  dependencies:
+    acorn: "npm:^8.14.1"
+    picomatch: "npm:^4.0.2"
+    webpack-virtual-modules: "npm:^0.6.2"
+  checksum: 10c0/42d172be9b52cc139c69a8baefab6c44e99d7fbdafb9e5738348bc60f6c1302b9913543641f69b76bb07c6ff7d01fde3d8a67c9d3d7a976cc17d972c1ff88081
   languageName: node
   linkType: hard
 
