@@ -21,7 +21,7 @@
     "@vitejs/plugin-vue2": "^2.3.1",
     "@vue/eslint-config-standard": "^8.0.1",
     "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/language-plugin-pug": "^2.0.11",
+    "@vue/language-plugin-pug": "^3.0.0",
     "bootstrap-vue": "^2.23.1",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1",
