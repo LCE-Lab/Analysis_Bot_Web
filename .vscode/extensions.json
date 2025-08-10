@@ -1,9 +1,12 @@
 {
   "recommendations": [
+    "vivaxy.vscode-conventional-commits",
+    "mhutchie.git-graph",
+    "lokalise.i18n-ally",
+    "EditorConfig.EditorConfig",
     "Vue.volar",
     "dbaeumer.vscode-eslint",
-    "mhutchie.git-graph",
-    "vivaxy.vscode-conventional-commits",
-    "syler.sass-indented"
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode"
   ]
 }

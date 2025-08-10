@@ -1,0 +1,4 @@
+# Ignore d.ts file
+src/**/*.d.ts
+# Ignore md file
+src/**/*.md
