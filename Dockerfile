@@ -1,9 +1,15 @@
-FROM node:20 as build-stage
+FROM node:22 as build-stage
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY ./ .
-RUN npm run build
+
+ENV NODE_ENV=production
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+
+RUN corepack enable
+
+COPY . .
+RUN yarn install --immutable
+
+RUN yarn build
 RUN cp /app/cfg/settings.js.example /app/cfg/settings.js
 
 FROM nginx:alpine-slim as production-stage
