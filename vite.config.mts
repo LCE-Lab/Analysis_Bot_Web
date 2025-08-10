@@ -8,6 +8,9 @@ import Components from 'unplugin-vue-components/vite'
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import Fonts from 'unplugin-fonts/vite'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import Inspect from 'vite-plugin-inspect'
+import Inspector from 'unplugin-vue-inspector/vite'
+import VueDevTools from 'vite-plugin-vue-devtools'
 
 // Utilities
 import { defineConfig } from 'vite'
@@ -70,6 +73,15 @@ export default defineConfig({
         ],
       },
     }),
+
+    // https://github.com/antfu/vite-plugin-inspect
+    Inspect(),
+
+    // https://github.com/webfansplz/vite-plugin-vue-inspector
+    Inspector(),
+
+    // https://github.com/vuejs/devtools-next
+    VueDevTools(),
   ],
   optimizeDeps: {
     exclude: [
