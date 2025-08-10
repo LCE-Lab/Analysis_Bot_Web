@@ -2,6 +2,7 @@
 const guildId = ref('')
 const searchToggle = ref('today')
 const dateRange = shallowRef<Date[] | null>(null)
+const helpDialog = ref(false)
 
 const rules = {
   required: (value: string) => !!value || 'Field is required',
@@ -32,6 +33,8 @@ const onSubmit = () => {
     <v-text-field
       v-model="guildId"
       :rules="[rules.required]"
+      append-inner-icon="mdi-help-circle-outline"
+      @click:append-inner="helpDialog = true"
       label="Guild Id"
       class="w-100"
       clearable
@@ -66,4 +69,14 @@ const onSubmit = () => {
       >Search</v-btn
     >
   </v-form>
+  <v-dialog v-model="helpDialog" width="auto">
+    <v-card prepend-icon="mdi-help-circle-outline" title="How to get the Guild Id">
+      <div class="px-4">
+        <HelpDialog />
+      </div>
+      <template v-slot:actions>
+        <v-btn class="ms-auto" text="Close" @click="helpDialog = false"></v-btn>
+      </template>
+    </v-card>
+  </v-dialog>
 </template>
