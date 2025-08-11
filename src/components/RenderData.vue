@@ -37,7 +37,9 @@ onMounted(() => {
   <v-card
     width="100%"
     :loading="isLoading"
-    :title="isError || isNoData || isLoading ? 'Loading...' : 'Voice Online Timeline'"
+    :title="
+      isError || isNoData || isLoading ? (isLoading ? 'Loading' : '') : 'Voice Online Timeline'
+    "
     :subtitle="isError || isNoData || isLoading || !guildId ? '' : `Guild ID: ${guildId}`"
     min-height="400"
     class="pa-4"
