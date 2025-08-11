@@ -40,7 +40,7 @@ onMounted(() => {
     :title="
       isError || isNoData || isLoading ? (isLoading ? 'Loading' : '') : 'Voice Online Timeline'
     "
-    :subtitle="isError || isNoData || isLoading || !guildId ? '' : `Guild ID: ${guildId}`"
+    :subtitle="isError || isNoData || isLoading || !guildId ? '' : `Server ID: ${guildId}`"
     min-height="400"
     class="pa-4"
     :class="[
