@@ -1,6 +1,6 @@
 <template>
   <v-footer app height="40">
-    <div class="text-caption text-disabled" style="position: absolute; right: 16px">
+    <div class="text-caption text-disabled" style="position: absolute; left: 16px">
       &copy; 2020-{{ new Date().getFullYear() }}
       <span class="d-none d-sm-inline-block">LCE-Lab</span>
       —

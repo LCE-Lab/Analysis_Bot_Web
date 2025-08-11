@@ -20,6 +20,9 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
+    '/custom/[id]': RouteRecordInfo<'/custom/[id]', '/custom/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/day/[id]': RouteRecordInfo<'/day/[id]', '/day/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
+    '/week/[id]': RouteRecordInfo<'/week/[id]', '/week/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
   }
 
   /**
@@ -39,6 +42,18 @@ declare module 'vue-router/auto-routes' {
     }
     'src/pages/about.vue': {
       routes: '/about'
+      views: never
+    }
+    'src/pages/custom/[id].vue': {
+      routes: '/custom/[id]'
+      views: never
+    }
+    'src/pages/day/[id].vue': {
+      routes: '/day/[id]'
+      views: never
+    }
+    'src/pages/week/[id].vue': {
+      routes: '/week/[id]'
       views: never
     }
   }
