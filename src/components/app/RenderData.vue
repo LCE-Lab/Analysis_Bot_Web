@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ITimeLineData } from '@/api/query'
-import AnalysisTimeline from '@/components/AnalysisTimeline.vue'
+import AnalysisTimeline from '@/components/app/AnalysisTimeline.vue'
 
 const { data, isError, isNoData, isLoading, guildId } = defineProps<{
   data: ITimeLineData | null

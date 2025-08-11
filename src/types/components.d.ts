@@ -8,12 +8,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AnalysisTimeline: typeof import('./../components/AnalysisTimeline.vue')['default']
+    AnalysisTimeline: typeof import('./../components/app/AnalysisTimeline.vue')['default']
     AppFooter: typeof import('./../components/AppFooter.vue')['default']
-    HelpDialog: typeof import('./../components/HelpDialog.vue')['default']
-    RenderData: typeof import('./../components/RenderData.vue')['default']
+    HelpDialog: typeof import('./../components/app/HelpDialog.vue')['default']
+    RenderData: typeof import('./../components/app/RenderData.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SearchForm: typeof import('./../components/SearchForm.vue')['default']
+    SearchForm: typeof import('./../components/app/SearchForm.vue')['default']
   }
 }

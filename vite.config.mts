@@ -5,7 +5,6 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Layouts from 'vite-plugin-vue-layouts-next'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import Inspect from 'vite-plugin-inspect'
 import Inspector from 'unplugin-vue-inspector/vite'
@@ -14,7 +13,6 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 // Utilities
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
-import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -54,11 +52,6 @@ export default defineConfig({
     // https://github.com/unplugin/unplugin-vue-components
     Components({
       dts: './src/types/components.d.ts', // enabled by default if `typescript` is installed
-    }),
-
-    // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
-    VueI18nPlugin({
-      include: resolve(__dirname, './locales/**'),
     }),
 
     // https://github.com/antfu/vite-plugin-inspect

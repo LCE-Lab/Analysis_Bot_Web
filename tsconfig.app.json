@@ -10,10 +10,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": [
-      "unplugin-vue-router/client",
-      "vite-plugin-vue-layouts-next/client",
-      "@intlify/unplugin-vue-i18n/messages"
-    ]
+    "types": ["unplugin-vue-router/client", "vite-plugin-vue-layouts-next/client"]
   }
 }

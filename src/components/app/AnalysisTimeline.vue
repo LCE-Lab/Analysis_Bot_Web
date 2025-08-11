@@ -44,6 +44,6 @@ defineExpose({
 </template>
 
 <style lang="sass">
-@use "../styles/vis_timeline/vis_timeline_graph2d"
-@use "../styles/vis_timeline/vis_items"
+@use "../../styles/vis_timeline/vis_timeline_graph2d"
+@use "../../styles/vis_timeline/vis_items"
 </style>
