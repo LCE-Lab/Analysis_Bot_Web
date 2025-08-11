@@ -67,6 +67,6 @@ yarn format
 
 ## Thanks
 
-- [jimchen5209](https://jimchen5209.me) **Assist front-end**
+- [jimchen5209](https://jimchen5209.me) **Assist front-end backend**
 - [bill96012](https://github.com/bill96012) **UI/UX**
 - [james58899](https://github.com/james58899) **Idea of sunrise and sunset**
