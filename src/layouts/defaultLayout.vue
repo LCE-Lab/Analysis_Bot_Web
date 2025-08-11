@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar :elevation="2">
+  <v-app-bar :elevation="1">
     <v-app-bar-title text="Discord Online Analyzer" />
 
     <template v-slot:append>

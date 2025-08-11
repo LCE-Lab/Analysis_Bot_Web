@@ -18,6 +18,24 @@ export default createVuetify({
   blueprint: md3,
   theme: {
     defaultTheme: 'system',
+    themes: {
+      light: {
+        colors: {
+          primary: '#5865f2',
+          secondary: '#eeeef0',
+          background: '#f3f3f4',
+          surface: '#fbfbfb',
+        },
+      },
+      dark: {
+        colors: {
+          primary: '#5865f2',
+          secondary: '#333339',
+          background: '#121214',
+          surface: '#202024',
+        },
+      },
+    },
   },
   components: {
     VDateInput,
