@@ -41,7 +41,7 @@ const repos = [
 </script>
 
 <template>
-  <div class="d-flex flex-column ga-4">
+  <div class="d-flex flex-column w-100 ga-4">
     <h1>Discord Online Analyzer</h1>
     <p>
       Developed by <a href="https://github.com/OKTW-Network">OKTW</a> and

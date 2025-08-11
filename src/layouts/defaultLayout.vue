@@ -9,14 +9,10 @@
   </v-app-bar>
 
   <v-main>
-    <v-container class="fill-height" max-width="900">
+    <v-container class="fill-height">
       <router-view />
     </v-container>
   </v-main>
 
   <AppFooter />
 </template>
-
-<script lang="ts" setup>
-//
-</script>
