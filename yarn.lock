@@ -1855,6 +1855,7 @@ __metadata:
     eslint: "npm:^9.33.0"
     eslint-plugin-vue: "npm:^10.4.0"
     jiti: "npm:^2.5.1"
+    moment: "npm:^2.30.1"
     npm-run-all2: "npm:^8.0.4"
     pinia: "npm:^3.0.3"
     prettier: "npm:^3.6.2"
@@ -1864,6 +1865,8 @@ __metadata:
     unplugin-vue-components: "npm:^29.0.0"
     unplugin-vue-inspector: "npm:^2.3.2"
     unplugin-vue-router: "npm:^0.15.0"
+    vis-data: "npm:^8.0.1"
+    vis-timeline: "npm:^8.3.0"
     vite: "npm:^7.1.1"
     vite-plugin-inspect: "npm:^11.3.2"
     vite-plugin-vue-devtools: "npm:^8.0.0"
@@ -3713,6 +3716,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"moment@npm:^2.30.1":
+  version: 2.30.1
+  resolution: "moment@npm:2.30.1"
+  checksum: 10c0/865e4279418c6de666fca7786607705fd0189d8a7b7624e2e56be99290ac846f90878a6f602e34b4e0455c549b85385b1baf9966845962b313699e7cb847543a
+  languageName: node
+  linkType: hard
+
 "mrmime@npm:^2.0.0":
   version: 2.0.1
   resolution: "mrmime@npm:2.0.1"
@@ -5129,6 +5139,33 @@ __metadata:
   version: 6.0.0
   resolution: "varint@npm:6.0.0"
   checksum: 10c0/737fc37088a62ed3bd21466e318d21ca7ac4991d0f25546f518f017703be4ed0f9df1c5559f1dd533dddba4435a1b758fd9230e4772c1a930ef72b42f5c750fd
+  languageName: node
+  linkType: hard
+
+"vis-data@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "vis-data@npm:8.0.1"
+  peerDependencies:
+    uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
+    vis-util: ">=6.0.0"
+  checksum: 10c0/7653f514e59740a5d375173731b955e818d47f39771638eb808d977aa952696ae05be295ef0037d54575a52f5b7baed454907d855a2cb82644c7a7c7e1cfbd96
+  languageName: node
+  linkType: hard
+
+"vis-timeline@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "vis-timeline@npm:8.3.0"
+  peerDependencies:
+    "@egjs/hammerjs": ^2.0.0
+    component-emitter: ^1.3.0
+    keycharm: ^0.2.0 || ^0.3.0 || ^0.4.0
+    moment: ^2.24.0
+    propagating-hammerjs: ^1.4.0 || ^2.0.0 || ^3.0.0
+    uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
+    vis-data: ">=8.0.0"
+    vis-util: ">=6.0.0"
+    xss: ^1.0.0
+  checksum: 10c0/c3509fb89fe1f40d99b8b402b8e7903f97019d600efe1433c728d322a6e74d072e2277dce58af303cb3cb8c86b037332179645d8554e218a162f65ddfc96bb34
   languageName: node
   linkType: hard
 

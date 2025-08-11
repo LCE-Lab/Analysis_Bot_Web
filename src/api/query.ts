@@ -1,5 +1,35 @@
 import { apiClient } from './client'
 
+export type QueryResponse = {
+  data: ITimeLineData
+}
+
+export type ITimeLineData = {
+  groups: ITimeLineGroupItem[]
+  dataSets: ITimeLineDataSetItem[]
+  properties: ITimeLineProperties
+}
+
+export type ITimeLineGroupItem = {
+  id: string
+  content: string
+}
+
+export type ITimeLineDataSetItem = {
+  id: string
+  title: string
+  className: string
+  group: string
+  start: string
+  end: string
+  content: string
+}
+
+export type ITimeLineProperties = {
+  startTime: string
+  endTime: string
+}
+
 export const apiUrls = {
   day: (serverId: string) => `/day/${serverId}`,
   week: (serverId: string) => `/week/${serverId}`,

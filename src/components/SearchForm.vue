@@ -46,8 +46,6 @@ const getFinalRange = () => {
 
 const isDirty = computed(() => {
   const finalRange = getFinalRange()
-  console.info(finalRange)
-  console.info(existingStart, existingEnd)
   return (
     guildId.value !== existingGuildId ||
     searchType.value !== existingSearchType ||
@@ -97,7 +95,12 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <v-form @submit.prevent @submit="onSubmit" class="d-flex flex-column align-center ga-4 w-100">
+  <v-form
+    @submit.prevent
+    @submit="onSubmit"
+    class="d-flex flex-column align-center ga-4 w-100"
+    style="max-width: 900px"
+  >
     <v-text-field
       v-model="guildId"
       :rules="[rules.required]"
