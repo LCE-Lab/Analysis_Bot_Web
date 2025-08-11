@@ -35,7 +35,7 @@ const onSubmit = () => {
       :rules="[rules.required]"
       append-inner-icon="mdi-help-circle-outline"
       @click:append-inner="helpDialog = true"
-      label="Guild Id"
+      label="Server ID"
       class="w-100"
       clearable
     ></v-text-field>
@@ -69,8 +69,8 @@ const onSubmit = () => {
       >Search</v-btn
     >
   </v-form>
-  <v-dialog v-model="helpDialog" width="auto">
-    <v-card prepend-icon="mdi-help-circle-outline" title="How to get the Guild Id">
+  <v-dialog v-model="helpDialog" max-width="1440">
+    <v-card prepend-icon="mdi-help-circle-outline" title="How to get the Server ID">
       <div class="px-4">
         <HelpDialog />
       </div>
