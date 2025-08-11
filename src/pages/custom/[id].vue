@@ -35,7 +35,9 @@ const getData = async () => {
   if (response) {
     isLoading.value = false
     if (response.data == null || response.data.length === 0) {
-      isNoData.value = true
+      if (!isError.value) {
+        isNoData.value = true
+      }
     } else {
       timelineData.value = response.data
     }
