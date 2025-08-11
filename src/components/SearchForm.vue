@@ -4,17 +4,25 @@ const {
   type: existingSearchType,
   start: existingStart,
   end: existingEnd,
+  collapsed,
 } = defineProps<{
   guildId?: string | null
   type?: string | null
   start?: string | null
   end?: string | null
+  collapsed?: boolean | null
 }>()
 
 const router = useRouter()
 
 const guildId = ref(existingGuildId ?? '')
-const searchType = ref(existingSearchType ?? 'today')
+const searchType = ref(existingSearchType ?? 'day')
+
+const selectItems = [
+  { state: 'Today', abbr: 'day' },
+  { state: 'This Week', abbr: 'week' },
+  { state: 'Custom', abbr: 'custom' },
+]
 
 const existingDateRange = () => {
   if (existingStart && existingEnd) {
@@ -96,9 +104,10 @@ const onSubmit = () => {
 
 <template>
   <v-form
+    v-if="!collapsed"
     @submit.prevent
     @submit="onSubmit"
-    class="d-flex flex-column align-center ga-4 w-100"
+    class="d-flex flex-column align-center ga-2 ga-md-4 w-100"
     style="max-width: 900px"
   >
     <v-text-field
@@ -109,26 +118,28 @@ const onSubmit = () => {
       label="Server ID"
       class="w-100"
       clearable
-    ></v-text-field>
+    />
     <v-btn-toggle v-model="searchType" mandatory>
       <v-btn value="day" prepend-icon="mdi-calendar-today"> Today </v-btn>
       <v-btn value="week" prepend-icon="mdi-calendar-week"> This Week </v-btn>
       <v-btn value="custom" prepend-icon="mdi-calendar-range"> Custom </v-btn>
     </v-btn-toggle>
-    <v-date-input
-      v-model="dateRange"
-      :disabled="searchType !== 'custom'"
-      :rules="[rules.dateRange]"
-      label="Select range"
-      prepend-icon=""
-      prepend-inner-icon="$calendar"
-      multiple="range"
-      input-format="yyyy/mm/dd"
-      :max="new Date()"
-      mobile-breakpoint="md"
-      class="w-100"
-      clearable
-    ></v-date-input>
+    <v-expand-transition>
+      <v-date-input
+        v-model="dateRange"
+        v-show="searchType === 'custom'"
+        :rules="[rules.dateRange]"
+        label="Select range"
+        prepend-icon=""
+        prepend-inner-icon="$calendar"
+        multiple="range"
+        input-format="yyyy/mm/dd"
+        :max="new Date()"
+        mobile-breakpoint="md"
+        class="w-100"
+        clearable
+      />
+    </v-expand-transition>
     <v-btn
       :disabled="
         (guildId ?? '').length === 0 ||
@@ -138,8 +149,71 @@ const onSubmit = () => {
       prepend-icon="mdi-magnify"
       class="mt-2"
       type="submit"
-      >Search</v-btn
     >
+      Search
+    </v-btn>
+  </v-form>
+  <v-form
+    v-else
+    @submit.prevent
+    @submit="onSubmit"
+    class="d-flex flex-column flex-md-row align-center ga-2 ga-md-4 w-100"
+    style="max-width: 1000px"
+  >
+    <v-text-field
+      v-model="guildId"
+      :rules="[rules.required]"
+      class="w-100 w-md-auto"
+      append-inner-icon="mdi-help-circle-outline"
+      @click:append-inner="helpDialog = true"
+      label="Server ID"
+      clearable
+    />
+    <v-select
+      label="Type"
+      class="w-100 w-md-auto"
+      v-model="searchType"
+      :items="selectItems"
+      item-title="state"
+      item-value="abbr"
+      variant="outlined"
+    />
+    <v-date-input
+      v-model="dateRange"
+      v-show="searchType === 'custom'"
+      class="w-100 w-md-auto"
+      :rules="[rules.dateRange]"
+      label="Select range"
+      prepend-icon=""
+      prepend-inner-icon="$calendar"
+      multiple="range"
+      input-format="yyyy/mm/dd"
+      :max="new Date()"
+      mobile-breakpoint="md"
+      clearable
+    />
+    <v-btn
+      :disabled="
+        (guildId ?? '').length === 0 ||
+        !isDirty ||
+        (searchType === 'custom' && (dateRange === null || dateRange.length === 0))
+      "
+      icon="mdi-magnify"
+      class="mb-4 d-none d-md-flex"
+      type="submit"
+    />
+    <v-btn
+      :disabled="
+        (guildId ?? '').length === 0 ||
+        !isDirty ||
+        (searchType === 'custom' && (dateRange === null || dateRange.length === 0))
+      "
+      prepend-icon="mdi-magnify"
+      class="mt-2 d-flex d-md-none"
+      type="submit"
+    >
+      Search
+    </v-btn>
   </v-form>
   <v-dialog v-model="helpDialog" max-width="1440">
     <v-card prepend-icon="mdi-help-circle-outline" title="How to get the Server ID">

@@ -57,7 +57,7 @@ onMounted(() => {
 
 <template>
   <div class="d-flex flex-column align-center w-100 ga-8">
-    <SearchForm :guildId="id" type="custom" :start="start" :end="end" />
+    <SearchForm :guildId="id" type="custom" :start="start" :end="end" collapsed />
     <RenderData
       :data="timelineData"
       :isLoading="isLoading"
