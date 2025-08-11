@@ -17,18 +17,13 @@ export default defineConfigWithVueTs(
     name: 'app/files-to-ignore',
     ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
   },
-
-  {
-    rules: {
-      'vue/multi-word-component-names': [
-        'error',
-        {
-          ignores: ['index', 'about', '[id]'],
-        },
-      ],
-    },
-  },
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
   skipFormatting,
+  {
+    files: ['src/pages/**/*.vue'],
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 )
