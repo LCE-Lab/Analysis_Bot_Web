@@ -26,7 +26,7 @@ const draw = (data: ITimeLineData) => {
 
   chart.value = new Timeline(container, items, groups, options)
 }
-const destory = () => {
+const destroy = () => {
   if (chart.value) {
     chart.value.destroy()
     chart.value = null
@@ -35,7 +35,7 @@ const destory = () => {
 
 defineExpose({
   draw,
-  destory,
+  destroy,
 })
 </script>
 

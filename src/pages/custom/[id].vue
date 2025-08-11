@@ -15,6 +15,9 @@ const start = computed(() => route.query.start as string)
 const end = computed(() => route.query.end as string)
 
 const getData = async () => {
+  // Reset State
+  timelineData.value = null
+
   isLoading.value = true
   isError.value = false
   isNoData.value = false
@@ -31,9 +34,21 @@ const getData = async () => {
 
   if (response) {
     isLoading.value = false
-    timelineData.value = response.data
+    if (response.data == null || response.data.length === 0) {
+      isNoData.value = true
+    } else {
+      timelineData.value = response.data
+    }
   }
 }
+
+watch(
+  () => [id.value, start.value, end.value],
+  () => {
+    getData()
+  },
+  { immediate: true },
+)
 
 onMounted(() => {
   getData().catch(console.error)
@@ -48,6 +63,8 @@ onMounted(() => {
       :isLoading="isLoading"
       :isError="isError"
       :isNoData="isNoData"
+      :guildId="id"
+      @refresh="getData"
     />
   </div>
 </template>
