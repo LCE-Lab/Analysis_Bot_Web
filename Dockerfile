@@ -1,4 +1,4 @@
-FROM node:22 as build-stage
+FROM node:22 AS build-stage
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -12,7 +12,7 @@ RUN yarn install --immutable
 RUN yarn build
 RUN cp /app/cfg/settings.js.example /app/cfg/settings.js
 
-FROM nginx:alpine-slim as production-stage
+FROM nginx:alpine-slim AS production-stage
 RUN mkdir /app
 COPY --from=build-stage /app/dist /app
 COPY --from=build-stage /app/cfg /app
