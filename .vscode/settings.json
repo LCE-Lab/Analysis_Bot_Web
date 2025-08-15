@@ -3,10 +3,12 @@
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, bun*, renovate.json",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, bun*, renovate.json,.mergify.yml, .browserslistrc",
     "tailwindcss.config.js": "tailwind.config.*, postcss.config.*",
     ".gitignore": ".git*",
-    ".env.example": ".env*"
+    ".env.example": ".env*",
+    "Dockerfile": "docker-compose.yml, nginx.conf",
+    "README.md": "CHANGELOG.md, CONTRIBUTING.md, LICENSE"
   },
   "eslint.format.enable": true,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],

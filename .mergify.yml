@@ -1,0 +1,42 @@
+queue_rules:
+  - name: dev-queue
+    queue_conditions:
+      - and:
+          - base=dev
+          - check-success=build-and-push-image
+          - check-success=build
+          - 'label!=status: blocked'
+
+pull_request_rules:
+  - name: Auto-merge Renovate PRs with high confidence
+    conditions:
+      - base=dev
+      - author=renovate[bot]
+      - label=confidence:high
+      - check-success=build-and-push-image
+      - check-success=build
+    actions:
+      queue:
+        name: dev-queue
+
+  - name: Merge branch into dev (Label)
+    conditions:
+      - base=dev
+      - 'label!=status: blocked'
+      - 'label=status: ready-to-merge'
+      - check-success=build-and-push-image
+      - check-success=build
+    actions:
+      queue:
+        name: dev-queue
+
+  - name: Merge branch into dev (manual approval)
+    conditions:
+      - base=dev
+      - 'label!=status: blocked'
+      - '#approved-reviews-by>=1'
+      - check-success=build-and-push-image
+      - check-success=build
+    actions:
+      queue:
+        name: dev-queue
