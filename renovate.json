@@ -18,7 +18,18 @@
       ],
       "automerge": false,
       "addLabels": [
-        "confidence:{{confidence}}"
+        "update:minor"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": false,
+      "addLabels": [
+        "status:ready-to-merge"
       ]
     },
     {
@@ -27,8 +38,22 @@
       ],
       "automerge": false,
       "addLabels": [
-        "confidence:{{confidence}}",
-        "requires-major-review"
+        "update:major"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump",
+        "replacement"
+      ],
+      "automerge": false,
+      "addLabels": [
+        "update:misc"
       ]
     },
     {

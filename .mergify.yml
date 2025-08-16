@@ -5,32 +5,33 @@ queue_rules:
           - base=dev
           - check-success=build-and-push-image
           - check-success=build
-          - 'label!=status: blocked'
+          - 'label!=status:blocked'
   - name: prod-queue
     queue_conditions:
       - and:
           - base=prod
           - check-success=build-and-push-image
           - check-success=build
-          - 'label!=status: blocked'
+          - 'label!=status:blocked'
 
 pull_request_rules:
-  - name: Auto-merge Renovate PRs with high confidence
+  - name: Auto Merge renovate minor dep
     conditions:
       - base=dev
       - author=renovate[bot]
-      - label=confidence:high
-      - check-success=build-and-push-image
+      - 'label!=status:blocked'
+      - 'label=status:ready-to-merge'
+      - '#commits-behind<5'
       - check-success=build
     actions:
-      queue:
-        name: dev-queue
+      merge:
 
   - name: Merge branch into dev (Label)
     conditions:
       - base=dev
-      - 'label!=status: blocked'
-      - 'label=status: ready-to-merge'
+      - author!=renovate[bot]
+      - 'label!=status:blocked'
+      - 'label=status:ready-to-merge'
       - check-success=build-and-push-image
       - check-success=build
     actions:
@@ -40,7 +41,8 @@ pull_request_rules:
   - name: Merge branch into dev (manual approval)
     conditions:
       - base=dev
-      - 'label!=status: blocked'
+      - author!=renovate[bot]
+      - 'label!=status:blocked'
       - '#approved-reviews-by>=1'
       - check-success=build-and-push-image
       - check-success=build
@@ -51,7 +53,7 @@ pull_request_rules:
   - name: Merge Production
     conditions:
       - base=prod
-      - 'label!=status: blocked'
+      - 'label!=status:blocked'
       - '#approved-reviews-by>=1'
       - check-success=build-and-push-image
       - check-success=build
