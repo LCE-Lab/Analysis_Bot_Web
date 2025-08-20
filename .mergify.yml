@@ -15,6 +15,18 @@ queue_rules:
           - 'label!=status:blocked'
 
 pull_request_rules:
+  - name: Automatic approval with label
+    conditions:
+      - base=dev
+      - 'label!=status:blocked'
+      - 'label=status:ready-to-merge'
+      - '#approved-reviews-by=0'
+      - check-success=build-and-push-image
+      - check-success=build
+    actions:
+      review:
+        type: APPROVE
+
   - name: Auto Merge renovate minor dep
     conditions:
       - base=dev
@@ -22,6 +34,7 @@ pull_request_rules:
       - 'label!=status:blocked'
       - 'label=status:ready-to-merge'
       - '#commits-behind<5'
+      - check-success=build-and-push-image
       - check-success=build
     actions:
       merge:
