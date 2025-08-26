@@ -69,6 +69,43 @@
       ]
     },
     {
+      "groupName": "vue packages",
+      "matchPackageNames": [
+        "vue",
+        "vue-router",
+        "pinia",
+        "@intlify/unplugin-vue-i18n",
+        "@vite-pwa/assets-generator",
+        "@vitejs/plugin-vue",
+        "@vue/tsconfig",
+        "unplugin-vue-components",
+        "unplugin-vue-inspector",
+        "unplugin-vue-router",
+        "unplugin-auto-import",
+        "vite",
+        "vite-plugin-inspect",
+        "vite-plugin-pwa",
+        "vite-plugin-vue-devtools",
+        "vite-plugin-vue-layouts",
+        "vue-tsc"
+      ]
+    },
+    {
+      "groupName": "vuetify packages",
+      "matchPackageNames": [
+        "vuetify",
+        "vite-plugin-vuetify",
+        "@mdi/font"
+      ]
+    },
+    {
+      "groupName": "sass packages",
+      "matchPackageNames": [
+        "sass",
+        "sass-embedded"
+      ]
+    },
+    {
       "matchManagers": [
         "npm"
       ],
