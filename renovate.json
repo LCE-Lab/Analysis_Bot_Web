@@ -12,6 +12,37 @@
   ],
   "packageRules": [
     {
+      "matchDatasources": [
+        "npm"
+      ],
+      "matchManagers": [
+        "npm"
+      ],
+      "minimumReleaseAge": "14 days",
+      "internalChecksFilter": "strict",
+      "addLabels": [
+        "package:npm"
+      ]
+    },
+    {
+      "groupName": "GitHub Actions",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "addLabels": [
+        "package:github-actions"
+      ]
+    },
+    {
+      "groupName": "Dockerfile",
+      "matchManagers": [
+        "docker"
+      ],
+      "addLabels": [
+        "package:docker"
+      ]
+    },
+    {
       "matchUpdateTypes": [
         "minor",
         "patch"
@@ -19,6 +50,17 @@
       "automerge": false,
       "addLabels": [
         "update:minor"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": false,
+      "addLabels": [
+        "status:ready-to-merge"
       ]
     },
     {
@@ -49,13 +91,15 @@
       "groupName": "eslint packages",
       "matchPackageNames": [
         "/.*eslint.*/"
-      ]
+      ],
+      "minimumReleaseAge": "14 days"
     },
     {
       "groupName": "definitelyTyped packages",
       "matchPackageNames": [
         "@types/**"
-      ]
+      ],
+      "minimumReleaseAge": "14 days"
     },
     {
       "groupName": "vue packages",
@@ -77,7 +121,8 @@
         "vite-plugin-vue-devtools",
         "vite-plugin-vue-layouts",
         "vue-tsc"
-      ]
+      ],
+      "minimumReleaseAge": "14 days"
     },
     {
       "groupName": "vuetify packages",
@@ -85,40 +130,16 @@
         "vuetify",
         "vite-plugin-vuetify",
         "@mdi/font"
-      ]
+      ],
+      "minimumReleaseAge": "14 days"
     },
     {
       "groupName": "sass packages",
       "matchPackageNames": [
         "sass",
         "sass-embedded"
-      ]
-    },
-    {
-      "matchManagers": [
-        "npm"
       ],
-      "addLabels": [
-        "package:npm"
-      ]
-    },
-    {
-      "groupName": "GitHub Actions",
-      "matchManagers": [
-        "github-actions"
-      ],
-      "addLabels": [
-        "package:github-actions"
-      ]
-    },
-    {
-      "groupName": "Dockerfile",
-      "matchManagers": [
-        "docker"
-      ],
-      "addLabels": [
-        "package:docker"
-      ]
+      "minimumReleaseAge": "14 days"
     }
   ]
 }
