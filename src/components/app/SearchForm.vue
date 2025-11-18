@@ -44,9 +44,13 @@ const existingDateRange = () => {
 const getFinalRange = () => {
   if (dateRange.value && dateRange.value.length > 0) {
     const finalRange = [...dateRange.value].sort((a: Date, b: Date) => a.getTime() - b.getTime())
-    return {
-      start: Math.floor(finalRange[0].getTime() / 1000).toString(),
-      end: Math.floor(finalRange[finalRange.length - 1].getTime() / 1000).toString(),
+    const first = finalRange[0]
+    const last = finalRange[finalRange.length - 1]
+    if (first && last) {
+      return {
+        start: Math.floor(first.getTime() / 1000).toString(),
+        end: Math.floor(last.getTime() / 1000).toString(),
+      }
     }
   }
   return null
