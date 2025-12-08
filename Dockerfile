@@ -13,6 +13,7 @@ RUN pnpm run build
 RUN cp /app/cfg/settings.js.example /app/cfg/settings.js
 
 FROM nginx:alpine-slim AS production-stage
+RUN apk -U upgrade
 RUN mkdir /app
 COPY --from=build-stage /app/dist /app
 COPY --from=build-stage /app/cfg /app
