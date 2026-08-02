@@ -644,10 +644,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/roboto@npm:5.2.6":
-  version: 5.2.6
-  resolution: "@fontsource/roboto@npm:5.2.6"
-  checksum: 10c0/a2fbadf2f3b8ebb859e7b13ad82d25e8b43901c30ad93b08095c201617fcfded279d99e64a7b110614d2a1b5bca77631df7d009abf1ad6c6a4df301ceb330a51
+"@fontsource/roboto@npm:5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/roboto@npm:5.3.0"
+  checksum: 10c0/68420d2c669ba05f0ea466343151c6d2efff85b05cedbf0f990c58635d86035cae5e7c4904db9abc7b9fd21c5ad179788243ec9dff0c30dfab90679ae2d226f9
   languageName: node
   linkType: hard
 
@@ -1822,7 +1822,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "analysis_bot_web@workspace:."
   dependencies:
-    "@fontsource/roboto": "npm:5.2.6"
+    "@fontsource/roboto": "npm:5.3.0"
     "@mdi/font": "npm:7.4.47"
     "@tsconfig/node22": "npm:^22.0.2"
     "@types/node": "npm:^22.17.1"
