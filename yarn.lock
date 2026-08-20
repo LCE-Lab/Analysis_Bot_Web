@@ -5079,12 +5079,12 @@ __metadata:
   linkType: hard
 
 "vis-data@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "vis-data@npm:8.0.1"
+  version: 8.0.5
+  resolution: "vis-data@npm:8.0.5"
   peerDependencies:
-    uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0
+    uuid: ^3.4.0 || ^7.0.0 || ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^13.0.0 || ^14.0.0
     vis-util: ">=6.0.0"
-  checksum: 10c0/7653f514e59740a5d375173731b955e818d47f39771638eb808d977aa952696ae05be295ef0037d54575a52f5b7baed454907d855a2cb82644c7a7c7e1cfbd96
+  checksum: 10c0/5c30ad9aa1747c7a50ddc8b2ac46839b70f0f185bec53b4c05d09686b7661befb0cbe00a7c9b9176beb988c1cd3cf16e2cc8e73cdf0f77495e2aa4d59d2c1a4e
   languageName: node
   linkType: hard
 
