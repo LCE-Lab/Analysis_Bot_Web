@@ -1135,10 +1135,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node22@npm:^22.0.2":
-  version: 22.0.2
-  resolution: "@tsconfig/node22@npm:22.0.2"
-  checksum: 10c0/c75e6b9ea86ec2a384adefac0e2f16a6c08202ae5cf6c8c745944396a6931ffb38e742809491c1882d1868c2af1c33744193701779674bfb1e05f6a130045a18
+"@tsconfig/node24@npm:^24.0.0":
+  version: 24.0.5
+  resolution: "@tsconfig/node24@npm:24.0.5"
+  checksum: 10c0/cea0c13ac00121e210f69823104d69081c99cf98c801a0772b6df5b51b3412e188084d74b6d2a42b33f29e3cf99298faf02c0baed41d336f5ef8828cc04d458f
   languageName: node
   linkType: hard
 
@@ -1824,7 +1824,7 @@ __metadata:
   dependencies:
     "@fontsource/roboto": "npm:5.2.6"
     "@mdi/font": "npm:7.4.47"
-    "@tsconfig/node22": "npm:^22.0.2"
+    "@tsconfig/node24": "npm:^24.0.0"
     "@types/node": "npm:^22.17.1"
     "@vitejs/plugin-vue": "npm:^6.0.1"
     "@vue/compiler-sfc": "npm:^3.5.18"
